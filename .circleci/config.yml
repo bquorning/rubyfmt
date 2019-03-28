@@ -15,8 +15,20 @@ workflows:
   build:
     jobs:
       - test:
+          name: "ruby 2.1"
+          ruby-version: "2.1"
+      - test:
+          name: "ruby 2.2"
+          ruby-version: "2.2"
+      - test:
           name: "ruby 2.3"
           ruby-version: "2.3"
       - test:
+          name: "ruby 2.4"
+          ruby-version: "2.4"
+      - test:
           name: "ruby 2.5"
           ruby-version: "2.5"
+      - test:
+          name: "ruby 2.6"
+          ruby-version: "2.6"
