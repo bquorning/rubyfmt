@@ -1,0 +1,22 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: circleci/ruby:<< parameters.ruby-version >>
+    parameters:
+      ruby-version:
+        type: string
+    steps:
+      - checkout
+      - run: ./ci/run.sh
+
+workflows:
+  build:
+    jobs:
+      - test:
+          name: "ruby 2.3"
+          ruby-version: "2.3"
+      - test:
+          name: "ruby 2.5"
+          ruby-version: "2.5"
